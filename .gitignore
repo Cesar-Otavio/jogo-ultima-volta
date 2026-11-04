@@ -7,9 +7,10 @@
 /[Mm]emoryCaptures/
 /[Rr]ecordings/
 
-# Builds do jogo (o executável é entregue à parte)
+# Builds do jogo e arquivos de entrega (são gerados de novo quando preciso)
 /[Bb]uild/
 /[Bb]uilds/
+/[Ee]ntrega/
 
 # Arquivos gerados pelo Visual Studio / VS Code / Rider
 .vs/
