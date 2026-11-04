@@ -21,9 +21,14 @@ public class CarController : MonoBehaviour
     [Tooltip("Velocidade a partir da qual o giro chega ao máximo.")]
     public float fullTurnAtSpeed = 2f;
 
+    [Header("Óleo")]
+    [Tooltip("Aderência no óleo. Quanto menor, mais o carro escorrega.")]
+    public float oilGrip = 2f;
+
     [Header("Corrida")]
     public RaceManager raceManager;
 
+    private float slipTimeLeft;
     private Rigidbody2D rb;
     private float speed;
     private float throttleInput;
@@ -65,6 +70,12 @@ public class CarController : MonoBehaviour
     void OnCollisionStay2D(Collision2D collision)
     {
         hitSomething = true;
+    }
+
+    // Chamado pela mancha de óleo.
+    public void Slip(float duration)
+    {
+        slipTimeLeft = Mathf.Max(slipTimeLeft, duration);
     }
 
     void StopCar()
@@ -137,7 +148,18 @@ public class CarController : MonoBehaviour
         float turnFactor = Mathf.Clamp(speed / fullTurnAtSpeed, -1f, 1f);
         rb.angularVelocity = steeringInput * turnSpeed * turnFactor;
 
-        rb.linearVelocity = Forward() * speed;
+        Vector2 targetVelocity = Forward() * speed;
+
+        if (slipTimeLeft > 0f)
+        {
+            // No óleo, a direção do movimento demora a acompanhar a frente do carro.
+            slipTimeLeft -= Time.fixedDeltaTime;
+            rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, targetVelocity, oilGrip * Time.fixedDeltaTime);
+        }
+        else
+        {
+            rb.linearVelocity = targetVelocity;
+        }
     }
 
     // Frente do carro segundo a física. O Transform não serve aqui porque,
