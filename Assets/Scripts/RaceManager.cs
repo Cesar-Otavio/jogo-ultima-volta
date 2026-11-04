@@ -32,37 +32,46 @@ public class RaceManager : MonoBehaviour
         if (state != RaceState.Waiting)
             return;
 
-        Time.timeScale = 1f;
+        SetPaused(false);
         state = RaceState.Racing;
     }
 
     // Time.timeScale = 0 para o cronômetro e a física de uma vez só.
+    // AudioListener.pause faz o mesmo com os sons.
     // Depois do resultado, esta função não faz nada.
     public void TogglePause()
     {
         if (state == RaceState.Racing)
         {
             state = RaceState.Paused;
-            Time.timeScale = 0f;
+            SetPaused(true);
         }
         else if (state == RaceState.Paused)
         {
             state = RaceState.Racing;
-            Time.timeScale = 1f;
+            SetPaused(false);
         }
     }
 
     // Carregar a cena de novo restaura tempo, danos e voltas.
     public void RestartRace()
     {
-        Time.timeScale = 1f;
+        SetPaused(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void BackToMenu()
     {
-        Time.timeScale = 1f;
+        SetPaused(false);
         SceneManager.LoadScene("Menu");
+    }
+
+    // Tempo e som valem para o jogo inteiro, por isso precisam voltar
+    // ao normal antes de trocar de cena.
+    void SetPaused(bool paused)
+    {
+        Time.timeScale = paused ? 0f : 1f;
+        AudioListener.pause = paused;
     }
 
     // Chamado pelo ponto de controle, na metade do percurso.

@@ -1,0 +1,19 @@
+Sons usados no jogo. Todos com licença CC0 (domínio público), conferida nas páginas originais em 04/11/2026.
+
+Musica/pure_raceway_bpm160.ogg
+Musica/pure_raceway_climax_bpm175.ogg
+  "Pure Raceway", de MintoDog
+  https://opengameart.org/content/pure-raceway
+
+Efeitos/vitoria_race_finish_best.ogg (original: "Race Finish Best (Jingle).ogg")
+Efeitos/derrota_race_finish_bad.ogg (original: "Race Finish Bad (Jingle).ogg")
+  "Racing Game Finish & Jingle", de MintoDog
+  https://opengameart.org/content/racing-game-finish-jingle
+
+Efeitos/motor_loop_0.wav (original: "loop_0.wav")
+  "racing car engine sound loops", de domasx2
+  https://opengameart.org/content/racing-car-engine-sound-loops
+
+Efeitos/impactMetal_heavy_000.ogg, _001.ogg e _002.ogg
+  "Impact Sounds", de Kenney
+  https://kenney.nl/assets/impact-sounds

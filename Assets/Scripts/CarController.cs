@@ -28,6 +28,9 @@ public class CarController : MonoBehaviour
     [Header("Corrida")]
     public RaceManager raceManager;
 
+    // De 0 (parado) a 1 (velocidade máxima). Usado no som do motor.
+    public float SpeedPercent => Mathf.Abs(speed) / maxSpeed;
+
     private float slipTimeLeft;
     private Rigidbody2D rb;
     private float speed;

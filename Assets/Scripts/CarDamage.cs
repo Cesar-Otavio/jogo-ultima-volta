@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarDamage : MonoBehaviour
 {
     public RaceManager raceManager;
+    public AudioManager audioManager;
 
     [Tooltip("Do carro intacto ao quebrado. O limite de danos é o último sprite da lista.")]
     public Sprite[] damageSprites;
@@ -33,23 +34,23 @@ public class CarDamage : MonoBehaviour
     // encostar e continuar encostado conta como um dano só.
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!raceManager.IsRacing || Time.time < invulnerableUntil)
+        if (!raceManager.IsRacing)
             return;
 
-        if (IsValidHit(collision))
+        // Conta só a velocidade na direção do que foi atingido:
+        // bater de frente é forte, raspar de lado é fraco.
+        Vector2 hitDirection = collision.GetContact(0).normal;
+        float impactSpeed = Mathf.Abs(Vector2.Dot(collision.relativeVelocity, hitDirection));
+
+        audioManager.PlayCollision(impactSpeed);
+
+        if (Time.time < invulnerableUntil)
+            return;
+
+        // Obstáculos sempre causam dano. Paredes, só em batidas fortes.
+        bool isObstacle = collision.collider.GetComponent<Obstacle>() != null;
+        if (isObstacle || impactSpeed >= minWallImpactSpeed)
             TakeDamage();
-    }
-
-    // Obstáculos sempre causam dano. Nas paredes, conta só a velocidade na
-    // direção da parede: bater de frente causa dano, raspar de lado não.
-    bool IsValidHit(Collision2D collision)
-    {
-        if (collision.collider.GetComponent<Obstacle>() != null)
-            return true;
-
-        Vector2 wallDirection = collision.GetContact(0).normal;
-        float impactSpeed = Mathf.Abs(Vector2.Dot(collision.relativeVelocity, wallDirection));
-        return impactSpeed >= minWallImpactSpeed;
     }
 
     void TakeDamage()
