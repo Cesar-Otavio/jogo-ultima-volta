@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum RaceState { Waiting, Racing, Paused, Won, Lost }
 public enum LossReason { None, TimeUp, CarBroken }
@@ -31,8 +32,37 @@ public class RaceManager : MonoBehaviour
         if (state != RaceState.Waiting)
             return;
 
+        Time.timeScale = 1f;
         state = RaceState.Racing;
-        Debug.Log("Corrida iniciada.");
+    }
+
+    // Time.timeScale = 0 para o cronômetro e a física de uma vez só.
+    // Depois do resultado, esta função não faz nada.
+    public void TogglePause()
+    {
+        if (state == RaceState.Racing)
+        {
+            state = RaceState.Paused;
+            Time.timeScale = 0f;
+        }
+        else if (state == RaceState.Paused)
+        {
+            state = RaceState.Racing;
+            Time.timeScale = 1f;
+        }
+    }
+
+    // Carregar a cena de novo restaura tempo, danos e voltas.
+    public void RestartRace()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void BackToMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Menu");
     }
 
     // Chamado pelo ponto de controle, na metade do percurso.
@@ -52,13 +82,9 @@ public class RaceManager : MonoBehaviour
 
         checkpointPassed = false;
         completedLaps++;
-        Debug.Log("Volta " + completedLaps + " de " + totalLaps + " completa.");
 
         if (completedLaps >= totalLaps)
-        {
             state = RaceState.Won;
-            Debug.Log("Vitória!");
-        }
     }
 
     public void TimeUp()
@@ -79,6 +105,5 @@ public class RaceManager : MonoBehaviour
 
         lossReason = reason;
         state = RaceState.Lost;
-        Debug.Log("Derrota: " + reason);
     }
 }

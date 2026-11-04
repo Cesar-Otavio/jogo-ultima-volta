@@ -57,7 +57,6 @@ public class CarDamage : MonoBehaviour
         damageCount++;
         invulnerableUntil = Time.time + invulnerabilityTime;
         spriteRenderer.sprite = damageSprites[damageCount];
-        Debug.Log("Dano " + damageCount + " de " + DamageLimit + ".");
 
         if (damageCount >= DamageLimit)
             raceManager.CarBroken();
