@@ -1,0 +1,33 @@
+# Pastas que a Unity recria sozinha
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+/[Mm]emoryCaptures/
+/[Rr]ecordings/
+
+# Builds do jogo (o executável é entregue à parte)
+/[Bb]uild/
+/[Bb]uilds/
+
+# Arquivos gerados pelo Visual Studio / VS Code / Rider
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.sln
+*.slnx
+*.suo
+*.user
+*.pidb
+*.booproj
+
+# Unity Version Control (substituído pelo GitHub neste projeto)
+/.plastic/
+/ignore.conf
+
+# Sistema operacional
+Thumbs.db
+Desktop.ini
+.DS_Store
