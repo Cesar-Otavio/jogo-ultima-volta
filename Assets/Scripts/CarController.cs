@@ -21,11 +21,15 @@ public class CarController : MonoBehaviour
     [Tooltip("Velocidade a partir da qual o giro chega ao máximo.")]
     public float fullTurnAtSpeed = 2f;
 
+    [Header("Corrida")]
+    public RaceManager raceManager;
+
     private Rigidbody2D rb;
     private float speed;
     private float throttleInput;
     private float steeringInput;
     private bool brakeInput;
+    private bool hitSomething;
 
     void Awake()
     {
@@ -40,9 +44,34 @@ public class CarController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Fora da corrida (antes de começar ou depois do resultado), o carro fica travado.
+        if (!raceManager.IsRacing)
+        {
+            StopCar();
+            return;
+        }
+
         LoseSpeedOnContact();
         UpdateSpeed();
         ApplyMovement();
+    }
+
+    // Só colisões físicas passam por aqui. Triggers, como a linha de chegada, não.
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        hitSomething = true;
+    }
+
+    void OnCollisionStay2D(Collision2D collision)
+    {
+        hitSomething = true;
+    }
+
+    void StopCar()
+    {
+        speed = 0f;
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
     }
 
     void ReadInput()
@@ -75,8 +104,10 @@ public class CarController : MonoBehaviour
     // parede e sair em velocidade máxima ao se soltar.
     void LoseSpeedOnContact()
     {
-        if (!rb.IsTouchingLayers())
+        if (!hitSomething)
             return;
+
+        hitSomething = false;
 
         float realSpeed = Vector2.Dot(rb.linearVelocity, Forward());
         if (Mathf.Abs(realSpeed) < Mathf.Abs(speed))
