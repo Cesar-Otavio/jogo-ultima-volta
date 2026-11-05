@@ -1,7 +1,7 @@
 # Última Volta: GDD simplificado
 
-**Grupo:** [PREENCHER: nomes dos integrantes]
-**Disciplina:** Desenvolvimento de Jogos Digitais
+**Grupo:** Amanda Pazold dos Santos, Cesar Otavio da Silva Boiani, Giovana Giraldeli, Giovani Nogueira Pires e Marcus Vinicius da Silva Capeteruchi
+**Disciplina:** Desenvolvimento de Jogos Digitais, Ciência da Computação (P2)
 **Entrega:** 19/11/2026
 
 ## 1. Visão geral

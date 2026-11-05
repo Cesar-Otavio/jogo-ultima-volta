@@ -1,6 +1,6 @@
 # Última Volta
 
-Jogo de corrida 2D com vista de cima, para PC, feito para a disciplina de Desenvolvimento de Jogos Digitais.
+Jogo de corrida 2D com vista de cima, para PC, feito para a disciplina **Desenvolvimento de Jogos Digitais** (Ciência da Computação, P2).
 
 Complete 5 voltas em até 3 minutos sem quebrar o carro. Cada batida forte deixa o carro visivelmente mais amassado, até ele não aguentar mais.
 
@@ -8,8 +8,11 @@ Complete 5 voltas em até 3 minutos sem quebrar o carro. Cada batida forte deixa
 
 | Nome | Contribuição |
 |---|---|
-| [PREENCHER: nome] | [PREENCHER: o que fez] |
-| [PREENCHER: nome] | [PREENCHER: o que fez] |
+| Amanda Pazold dos Santos | [PREENCHER] |
+| Cesar Otavio da Silva Boiani | [PREENCHER] |
+| Giovana Giraldeli | [PREENCHER] |
+| Giovani Nogueira Pires | [PREENCHER] |
+| Marcus Vinicius da Silva Capeteruchi | [PREENCHER] |
 
 ## Como jogar
 
@@ -129,4 +132,4 @@ Todos com licença [CC0](https://creativecommons.org/publicdomain/zero/1.0/), co
 
 - Unity 6000.6.7f1, com Universal Render Pipeline (2D Renderer), Input System e TextMesh Pro.
 - Fonte LiberationSans, incluída nos recursos do TextMesh Pro.
-- Desenvolvido com o apoio do assistente de programação Claude, da Anthropic.
+- Desenvolvido com o apoio do assistente de programação Claude, da Anthropic. A disciplina permite o uso de IA no desenvolvimento.
