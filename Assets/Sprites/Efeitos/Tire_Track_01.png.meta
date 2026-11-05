@@ -1,0 +1,756 @@
+fileFormatVersion: 2
+guid: e741e06f3cd67924f912beb913e5ac28
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6367794685179195290
+    second: Tire_Track_01_0
+  - first:
+      213: 1540211604956266192
+    second: Tire_Track_01_1
+  - first:
+      213: -5289943521746730378
+    second: Tire_Track_01_2
+  - first:
+      213: -2087870692570537785
+    second: Tire_Track_01_3
+  - first:
+      213: 6213574298338613509
+    second: Tire_Track_01_4
+  - first:
+      213: -4357374415592146525
+    second: Tire_Track_01_5
+  - first:
+      213: -8793583587546235926
+    second: Tire_Track_01_6
+  - first:
+      213: -3424434991093991618
+    second: Tire_Track_01_7
+  - first:
+      213: 5784210819475674778
+    second: Tire_Track_01_8
+  - first:
+      213: -6896483010032297257
+    second: Tire_Track_01_9
+  - first:
+      213: 1593911262868189602
+    second: Tire_Track_01_10
+  - first:
+      213: -313478407688512437
+    second: Tire_Track_01_11
+  - first:
+      213: -2315922176694611759
+    second: Tire_Track_01_12
+  - first:
+      213: 791180503602512951
+    second: Tire_Track_01_13
+  - first:
+      213: 7332110180734118729
+    second: Tire_Track_01_14
+  - first:
+      213: -2347745835165163843
+    second: Tire_Track_01_15
+  - first:
+      213: -1309691998202357454
+    second: Tire_Track_01_16
+  - first:
+      213: 3746696028143528795
+    second: Tire_Track_01_17
+  - first:
+      213: -1624268898310140085
+    second: Tire_Track_01_18
+  - first:
+      213: 3938537099529495676
+    second: Tire_Track_01_19
+  - first:
+      213: -1064751123700521218
+    second: Tire_Track_01_20
+  - first:
+      213: 2446320876807088246
+    second: Tire_Track_01_21
+  - first:
+      213: 4479853002560336392
+    second: Tire_Track_01_22
+  - first:
+      213: -4460008926137878927
+    second: Tire_Track_01_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationMethod: 0
+  spriteTessellationDetail: -1
+  spriteGeometrySubdivision: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Tire_Track_01_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 589
+        width: 55
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9fe9b43783fe5850800000000000000
+      internalID: 6367794685179195290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 555
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0de3a585b4eef5510800000000000000
+      internalID: 1540211604956266192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_2
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 589
+        width: 55
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6724860f4685696b0800000000000000
+      internalID: -5289943521746730378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_3
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 555
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c06268caa46603e0800000000000000
+      internalID: -2087870692570537785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 477
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50958f547ec0b3650800000000000000
+      internalID: 6213574298338613509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 444
+        width: 77
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a9314d2e0f7783c0800000000000000
+      internalID: -4357374415592146525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_6
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 477
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aebf999415ae6f580800000000000000
+      internalID: -8793583587546235926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_7
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 444
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e37bc6fd486f970d0800000000000000
+      internalID: -3424434991093991618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 366
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9691d02815a54050800000000000000
+      internalID: 5784210819475674778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 332
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7da1283dd35ca40a0800000000000000
+      internalID: -6896483010032297257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_10
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 366
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a1b0c249d5be1610800000000000000
+      internalID: 1593911262868189602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_11
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 332
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4c98f09c0d46abf0800000000000000
+      internalID: -313478407688512437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 255
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d01ba2fc013cdfd0800000000000000
+      internalID: -2315922176694611759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 221
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7344176e976dafa00800000000000000
+      internalID: 791180503602512951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_14
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 255
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94baea8bc53e0c560800000000000000
+      internalID: 7332110180734118729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_15
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 221
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbed3101a912b6fd0800000000000000
+      internalID: -2347745835165163843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2391af1111a03dde0800000000000000
+      internalID: -1309691998202357454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 110
+        width: 77
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5bacdecf20fef330800000000000000
+      internalID: 3746696028143528795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_18
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 144
+        width: 55
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f4280fa007579e0800000000000000
+      internalID: -1624268898310140085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_19
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 110
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c742720ff9e78a630800000000000000
+      internalID: 3938537099529495676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 33
+        width: 55
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef6e1a98e7e3931f0800000000000000
+      internalID: -1064751123700521218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 77
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67865b450e313f120800000000000000
+      internalID: 2446320876807088246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_22
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 33
+        width: 55
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 802739f0292ab2e30800000000000000
+      internalID: 4479853002560336392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tire_Track_01_23
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 0
+        width: 37
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176fa76038dda12c0800000000000000
+      internalID: -4460008926137878927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Tire_Track_01_0: 6367794685179195290
+      Tire_Track_01_1: 1540211604956266192
+      Tire_Track_01_10: 1593911262868189602
+      Tire_Track_01_11: -313478407688512437
+      Tire_Track_01_12: -2315922176694611759
+      Tire_Track_01_13: 791180503602512951
+      Tire_Track_01_14: 7332110180734118729
+      Tire_Track_01_15: -2347745835165163843
+      Tire_Track_01_16: -1309691998202357454
+      Tire_Track_01_17: 3746696028143528795
+      Tire_Track_01_18: -1624268898310140085
+      Tire_Track_01_19: 3938537099529495676
+      Tire_Track_01_2: -5289943521746730378
+      Tire_Track_01_20: -1064751123700521218
+      Tire_Track_01_21: 2446320876807088246
+      Tire_Track_01_22: 4479853002560336392
+      Tire_Track_01_23: -4460008926137878927
+      Tire_Track_01_3: -2087870692570537785
+      Tire_Track_01_4: 6213574298338613509
+      Tire_Track_01_5: -4357374415592146525
+      Tire_Track_01_6: -8793583587546235926
+      Tire_Track_01_7: -3424434991093991618
+      Tire_Track_01_8: 5784210819475674778
+      Tire_Track_01_9: -6896483010032297257
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

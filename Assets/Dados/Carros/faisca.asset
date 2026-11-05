@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc6dbca214188f4dbce2a4ebf6875af, type: 3}
+  m_Name: faisca
+  m_EditorClassIdentifier: Assembly-CSharp::CarModel
+  id: faisca
+  displayName: "Fa\xEDsca"
+  description: "Equilibrado: bom em tudo. O carro do come\xE7o do jogo."
+  price: 0
+  damageSprites:
+  - {fileID: 21300000, guid: a138155e24d64164aab64a944a57bd15, type: 3}
+  - {fileID: 21300000, guid: fe256de334c99394386e295ee4d4a172, type: 3}
+  - {fileID: 21300000, guid: 34ea8a8b6274eb449b465c78beac3fcb, type: 3}
+  - {fileID: 21300000, guid: f71c493a24f3dea47801181f0c688ad6, type: 3}
+  - {fileID: 21300000, guid: 0df0185fbddfb254da8c5f0c591ca9f5, type: 3}
+  scale: 0.31
+  baseHue: 5
+  whiteBody: 0
+  stats:
+    maxSpeed: 10
+    acceleration: 8.5
+    brakeForce: 14
+    turnSpeed: 175
+    grip: 10
+    nitroCapacity: 2.5
+    hearts: 4
+    mass: 1

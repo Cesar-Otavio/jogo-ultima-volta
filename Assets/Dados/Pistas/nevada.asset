@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b7bcb337898ba4bae41fac4a789310, type: 3}
+  m_Name: nevada
+  m_EditorClassIdentifier: Assembly-CSharp::TrackInfo
+  id: nevada
+  displayName: Nevada
+  country: EUA
+  description: "Deserto com retas longas, rochas, \xF3leo e uma viatura de pol\xEDcia que n\xE3o gosta de apressados."
+  sceneName: Nevada
+  laps: 3
+  timeLimit: 255
+  botCount: 3
+  botSkill: 0.65
+  rewardMultiplier: 1.4
+  isNight: 0
+  themeColor: {r: 1, g: 0.55, b: 0.3, a: 1}
+  music: {fileID: 8300000, guid: e631eac35a7090645a89fa43676cd44e, type: 3}
+  lastLapMusic: {fileID: 8300000, guid: 8c125404f7ac53a4093dfe644d1555e4, type: 3}
+  challenges:
+  - type: 1
+    target: 0
+    reward: 150
+  - type: 7
+    target: 4
+    reward: 120
+  - type: 5
+    target: 25
+    reward: 120

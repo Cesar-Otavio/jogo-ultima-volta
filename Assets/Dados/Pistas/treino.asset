@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b7bcb337898ba4bae41fac4a789310, type: 3}
+  m_Name: treino
+  m_EditorClassIdentifier: Assembly-CSharp::TrackInfo
+  id: treino
+  displayName: Treino
+  country: "Aut\xF3dromo"
+  description: "O circuito original: 5 voltas contra o rel\xF3gio, sem advers\xE1rios. Bom para aprender o drift e o nitro."
+  sceneName: Treino
+  laps: 5
+  timeLimit: 180
+  botCount: 0
+  botSkill: 0
+  rewardMultiplier: 1
+  isNight: 0
+  themeColor: {r: 0.55, g: 0.8, b: 0.4, a: 1}
+  music: {fileID: 8300000, guid: 2a4eb07899f202942b19c09059aedec8, type: 3}
+  lastLapMusic: {fileID: 8300000, guid: d5cdd3ca48ba107449a9a8e6b8bc1502, type: 3}
+  challenges:
+  - type: 4
+    target: 30
+    reward: 100
+  - type: 2
+    target: 0
+    reward: 100
+  - type: 6
+    target: 5
+    reward: 75

@@ -1,0 +1,151 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c071212bc9015994d83a79e2c39138ba, type: 3}
+  m_Name: Catalogo
+  m_EditorClassIdentifier: Assembly-CSharp::GameCatalog
+  tracks:
+  - {fileID: 11400000, guid: 87f6ddf66434daf458e489b0f22f3007, type: 2}
+  - {fileID: 11400000, guid: 17dc089097fb86848aca7bf5581690d8, type: 2}
+  - {fileID: 11400000, guid: df8d7a65b67868049be06f9c3bc7e3a7, type: 2}
+  - {fileID: 11400000, guid: ce3efc543089d844593a92730794676c, type: 2}
+  - {fileID: 11400000, guid: 6a10e640e5aaacd42a02cc5973794b14, type: 2}
+  cars:
+  - {fileID: 11400000, guid: e4d8a356914b4f74ba68c95834a3cb11, type: 2}
+  - {fileID: 11400000, guid: 4950a644737fd7c498b8f64c4a47c14f, type: 2}
+  - {fileID: 11400000, guid: f6ae7675c2424e446a43f93bc1959183, type: 2}
+  colors:
+  - id: original
+    displayName: Original
+    color: {r: 1, g: 1, b: 1, a: 1}
+    original: 1
+    price: 0
+    challengesRequired: 0
+  - id: azul
+    displayName: Azul
+    color: {r: 0.15, g: 0.45, b: 1, a: 1}
+    original: 0
+    price: 80
+    challengesRequired: 0
+  - id: verde
+    displayName: Verde
+    color: {r: 0.2, g: 0.85, b: 0.3, a: 1}
+    original: 0
+    price: 80
+    challengesRequired: 0
+  - id: amarelo
+    displayName: Amarelo
+    color: {r: 1, g: 0.85, b: 0.1, a: 1}
+    original: 0
+    price: 80
+    challengesRequired: 0
+  - id: roxo
+    displayName: Roxo
+    color: {r: 0.6, g: 0.25, b: 0.95, a: 1}
+    original: 0
+    price: 120
+    challengesRequired: 0
+  - id: rosa
+    displayName: Rosa
+    color: {r: 1, g: 0.35, b: 0.7, a: 1}
+    original: 0
+    price: 120
+    challengesRequired: 0
+  - id: preto
+    displayName: Preto
+    color: {r: 0.08, g: 0.08, b: 0.08, a: 1}
+    original: 0
+    price: 150
+    challengesRequired: 0
+  - id: branco
+    displayName: Branco
+    color: {r: 1, g: 1, b: 1, a: 1}
+    original: 0
+    price: 150
+    challengesRequired: 0
+  - id: dourado
+    displayName: Dourado
+    color: {r: 1, g: 0.72, b: 0.15, a: 1}
+    original: 0
+    price: 300
+    challengesRequired: 6
+  engines:
+  - id: esportivo
+    displayName: Esportivo
+    description: O som original do motor.
+    minPitch: 0.8
+    maxPitch: 1.8
+    lowPassCutoff: 22000
+    price: 0
+    challengesRequired: 0
+  - id: v8
+    displayName: V8 grave
+    description: Ronco mais grave e encorpado.
+    minPitch: 0.55
+    maxPitch: 1.3
+    lowPassCutoff: 3000
+    price: 150
+    challengesRequired: 0
+  - id: turbo
+    displayName: Turbo agudo
+    description: Giro alto, como um carro de corrida.
+    minPitch: 1
+    maxPitch: 2.3
+    lowPassCutoff: 22000
+    price: 250
+    challengesRequired: 3
+  exhausts:
+  - id: padrao
+    displayName: "Padr\xE3o"
+    description: Estoura de vez em quando.
+    popChance: 0.15
+    flameColor: {r: 1, g: 0.6, b: 0.2, a: 1}
+    accelerationBonus: 0
+    price: 0
+    challengesRequired: 0
+  - id: esportivo
+    displayName: Esportivo
+    description: "Mais estouros e um pouco mais de acelera\xE7\xE3o."
+    popChance: 0.5
+    flameColor: {r: 1, g: 0.45, b: 0.15, a: 1}
+    accelerationBonus: 0.3
+    price: 200
+    challengesRequired: 0
+  - id: turbo
+    displayName: Turbo azul
+    description: "Chama azul e a maior acelera\xE7\xE3o extra."
+    popChance: 0.7
+    flameColor: {r: 0.4, g: 0.7, b: 1, a: 1}
+    accelerationBonus: 0.6
+    price: 400
+    challengesRequired: 6
+  upgrades:
+  - type: 0
+    displayName: Motor
+    description: "+0,6 de velocidade m\xE1xima e +0,5 de acelera\xE7\xE3o por n\xEDvel."
+    prices: 960000002c010000f4010000i
+  - type: 1
+    displayName: Pneus
+    description: "Mais ader\xEAncia e curvas 6% mais r\xE1pidas por n\xEDvel."
+    prices: 78000000fa00000090010000i
+  - type: 2
+    displayName: Freios
+    description: "Freia mais forte a cada n\xEDvel."
+    prices: 64000000c80000005e010000i
+  - type: 3
+    displayName: Blindagem
+    description: "+1 cora\xE7\xE3o por n\xEDvel."
+    prices: c8000000900100008a020000i
+  - type: 4
+    displayName: Nitro
+    description: "Tanque de nitro maior a cada n\xEDvel."
+    prices: 960000002c010000c2010000i
+  tracksUnlockedAtStart: 2

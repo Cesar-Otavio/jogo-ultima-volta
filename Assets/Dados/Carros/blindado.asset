@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bc6dbca214188f4dbce2a4ebf6875af, type: 3}
+  m_Name: blindado
+  m_EditorClassIdentifier: Assembly-CSharp::CarModel
+  id: blindado
+  displayName: Blindado
+  description: 'Pesado: empurra os rivais e aguenta 6 batidas, mas acelera devagar.'
+  price: 700
+  damageSprites:
+  - {fileID: 21300000, guid: f5a365d3a72d92a498508025629c3b2e, type: 3}
+  - {fileID: 21300000, guid: 97e439eb93fa1fb48a9b0d8fe22354ea, type: 3}
+  - {fileID: 21300000, guid: 718dfbb6b463c9e40a083e4c6bfbbfcc, type: 3}
+  - {fileID: 21300000, guid: 49206df55dd9d9140aa59f45ab844068, type: 3}
+  - {fileID: 21300000, guid: e32874d1eea214049b5be50db41cf2c5, type: 3}
+  scale: 0.26
+  baseHue: 0
+  whiteBody: 1
+  stats:
+    maxSpeed: 9.8
+    acceleration: 7.5
+    brakeForce: 13
+    turnSpeed: 160
+    grip: 10
+    nitroCapacity: 3
+    hearts: 6
+    mass: 1.6

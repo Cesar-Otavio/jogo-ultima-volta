@@ -1,19 +1,54 @@
-Sons usados no jogo. Todos com licença CC0 (domínio público), conferida nas páginas originais em 04/11/2026.
+Sons usados no jogo. Licenças conferidas nas páginas originais em 04/11/2026 e 05/11/2026.
+Todos são CC0 (domínio público), menos a derrapagem, que é CC-BY 3.0 e exige crédito ao autor.
 
-Musica/pure_raceway_bpm160.ogg
-Musica/pure_raceway_climax_bpm175.ogg
-  "Pure Raceway", de MintoDog
-  https://opengameart.org/content/pure-raceway
+MÚSICAS (todas de MintoDog, CC0)
+
+Musica/pure_raceway_bpm160.ogg e pure_raceway_climax_bpm175.ogg
+  "Pure Raceway" - https://opengameart.org/content/pure-raceway
+Musica/sunny_city_bpm120.ogg e sunny_city_climax_bpm135.ogg
+  "Sunny City" - https://opengameart.org/content/sunny-city
+Musica/joyful_jungle_bpm140.ogg e joyful_jungle_climax_bpm155.ogg
+  "Joyful Jungle" - https://opengameart.org/content/joyful-jungle
+Musica/hot_roadway_remake_bpm160.ogg e hot_roadway_climax_remake_bpm175.ogg
+  "Hot Roadway [Remake]" - https://opengameart.org/content/hot-roadway-remake
+Musica/neon_sign_circuit_remake_bpm145.ogg e neon_sign_circuit_climax_remake_bpm160.ogg
+  "Neon sign Circuit [Remake]" - https://opengameart.org/content/neon-sign-circuit-remake
+Musica/racing_game_menu_bpm165.ogg
+  "Racing Game Menu" - https://opengameart.org/content/racing-game-menu
+
+EFEITOS
 
 Efeitos/vitoria_race_finish_best.ogg (original: "Race Finish Best (Jingle).ogg")
 Efeitos/derrota_race_finish_bad.ogg (original: "Race Finish Bad (Jingle).ogg")
-  "Racing Game Finish & Jingle", de MintoDog
+  "Racing Game Finish & Jingle", de MintoDog, CC0
   https://opengameart.org/content/racing-game-finish-jingle
 
 Efeitos/motor_loop_0.wav (original: "loop_0.wav")
-  "racing car engine sound loops", de domasx2
+  "racing car engine sound loops", de domasx2, CC0
   https://opengameart.org/content/racing-car-engine-sound-loops
 
 Efeitos/impactMetal_heavy_000.ogg, _001.ogg e _002.ogg
-  "Impact Sounds", de Kenney
+  "Impact Sounds", de Kenney, CC0
   https://kenney.nl/assets/impact-sounds
+
+Efeitos/fogos_fw_01.ogg a fogos_fw_04.ogg (originais: fw_01.ogg a fw_04.ogg)
+Efeitos/escapamento_shot_01.ogg a _03.ogg (originais: shot_01.ogg a shot_03.ogg)
+  "25 CC0 bang / firework SFX", de rubberduck, CC0
+  https://opengameart.org/content/25-cc0-bang-firework-sfx
+
+Efeitos/moeda_Coin01.aif, desbloqueio_Upper01.aif e erro_Downer01.aif
+  "Level up, power up, Coin get (13 Sounds)", de wobbleboxx, CC0
+  https://opengameart.org/content/level-up-power-up-coin-get-13-sounds
+
+Efeitos/nitro_boost.mp3 (original: "boost.mp3")
+  "Boost or Launch or Thruster Sound Effect", de EZduzziteh, CC0
+  https://opengameart.org/content/boost-or-launch-or-thruster-sound-effect
+
+Efeitos/largada_countdown.ogg (original: "countdown.ogg")
+  "Race Start Countdown", de kheetor, CC0 (uma das licenças oferecidas)
+  https://opengameart.org/content/race-start-countdown
+
+Efeitos/derrapagem_tires_squal_loop.wav (original: "tires_squal_loop.wav")
+  "Car tire squeal skid loop", de audible-edge (Tom Haigh), CC-BY 3.0
+  https://opengameart.org/content/car-tire-squeal-skid-loop
+  Licença: https://creativecommons.org/licenses/by/3.0/

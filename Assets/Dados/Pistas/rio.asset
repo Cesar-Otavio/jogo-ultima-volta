@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36b7bcb337898ba4bae41fac4a789310, type: 3}
+  m_Name: rio
+  m_EditorClassIdentifier: Assembly-CSharp::TrackInfo
+  id: rio
+  displayName: Rio de Janeiro
+  country: Brasil
+  description: "Corrida na orla, entre pr\xE9dios e o mar. Asfalto com muros: cuidado nas curvas."
+  sceneName: Rio
+  laps: 3
+  timeLimit: 240
+  botCount: 3
+  botSkill: 0.25
+  rewardMultiplier: 1
+  isNight: 0
+  themeColor: {r: 1, g: 0.75, b: 0.3, a: 1}
+  music: {fileID: 8300000, guid: 7effb3a3fe4e1ae43bb8c133bfebfe19, type: 3}
+  lastLapMusic: {fileID: 8300000, guid: 28caec43d1c88fa41860487443bceebf, type: 3}
+  challenges:
+  - type: 1
+    target: 0
+    reward: 120
+  - type: 5
+    target: 20
+    reward: 100
+  - type: 3
+    target: 1
+    reward: 100
