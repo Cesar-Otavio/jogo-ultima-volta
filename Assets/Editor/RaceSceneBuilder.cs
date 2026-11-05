@@ -287,9 +287,11 @@ public static class RaceSceneBuilder
         hudController.positionText.fontStyle = FontStyles.Bold;
         hudController.positionText.color = UIBuilder.Gold;
 
-        RectTransform heartsRow = UIBuilder.Rect(hud, "Coracoes", TopRight, new Vector2(-30f, -40f), new Vector2(8 * 76f, 64f));
-        hudController.hearts = new UImage[8];
-        for (int i = 0; i < 8; i++)
+        // Até 10 corações: o Blindado com blindagem máxima chega a 9.
+        const int maxHearts = 10;
+        RectTransform heartsRow = UIBuilder.Rect(hud, "Coracoes", TopRight, new Vector2(-30f, -40f), new Vector2(maxHearts * 76f, 64f));
+        hudController.hearts = new UImage[maxHearts];
+        for (int i = 0; i < maxHearts; i++)
         {
             UImage slot = UIBuilder.Image(heartsRow, "Coracao" + (i + 1), UIBuilder.UISprite("HP_Dot_BG"), Color.white,
                 new Vector2(1f, 0.5f), new Vector2(-i * 76f, 0f), new Vector2(70f, 56f));

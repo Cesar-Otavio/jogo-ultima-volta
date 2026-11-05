@@ -1,4 +1,4 @@
-using System.IO;
+﻿using System.IO;
 using UnityEditor;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -29,8 +29,81 @@ public static class AssetSetup
         CreateMaterials();
         CreateAnimators();
         CreateData();
+        CreateAtlases();
+        ConfigureMusic();
         AssetDatabase.SaveAssets();
         Debug.Log("Assets preparados.");
+    }
+
+    // Músicas tocam direto do disco (Streaming) e com compressão maior,
+    // para o executável ficar menor.
+    static void ConfigureMusic()
+    {
+        foreach (string guid in AssetDatabase.FindAssets("t:AudioClip", new[] { "Assets/Audio/Musica" }))
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            AudioImporter importer = (AudioImporter)AssetImporter.GetAtPath(path);
+            AudioImporterSampleSettings settings = importer.defaultSampleSettings;
+            if (settings.loadType == AudioClipLoadType.Streaming && Mathf.Approximately(settings.quality, 0.5f))
+                continue;
+            settings.loadType = AudioClipLoadType.Streaming;
+            settings.compressionFormat = AudioCompressionFormat.Vorbis;
+            settings.quality = 0.5f;
+            importer.defaultSampleSettings = settings;
+            importer.SaveAndReimport();
+        }
+    }
+
+    // ---------- Atlas ----------
+
+    // Muitos PNGs da CraftPix têm medidas que não são múltiplas de 4, e a
+    // compressão da placa de vídeo não aceita isso: eles iriam sem compressão
+    // para o executável. Juntar os sprites em atlas resolve e diminui o build.
+    static void CreateAtlases()
+    {
+        string folder = SpritesFolder + "/Atlas";
+        Directory.CreateDirectory(folder);
+        Atlas(folder + "/Mundo.spriteatlasv2", true, "Carro", "Decor", "Efeitos", "Obstaculos");
+        Atlas(folder + "/Interface.spriteatlasv2", false, "UI");
+    }
+
+    static void Atlas(string path, bool mipmaps, params string[] folders)
+    {
+        // Recria sempre, para a lista de pastas ficar igual à deste código.
+        AssetDatabase.DeleteAsset(path);
+        {
+            UnityEditor.U2D.SpriteAtlasAsset atlas = new UnityEditor.U2D.SpriteAtlasAsset();
+            Object[] packables = new Object[folders.Length];
+            for (int i = 0; i < folders.Length; i++)
+                packables[i] = AssetDatabase.LoadAssetAtPath<DefaultAsset>(SpritesFolder + "/" + folders[i]);
+            atlas.Add(packables);
+            UnityEditor.U2D.SpriteAtlasAsset.Save(atlas, path);
+            AssetDatabase.ImportAsset(path);
+        }
+
+        UnityEditor.U2D.SpriteAtlasImporter importer = (UnityEditor.U2D.SpriteAtlasImporter)AssetImporter.GetAtPath(path);
+        importer.packingSettings = new UnityEditor.U2D.SpriteAtlasPackingSettings
+        {
+            enableRotation = false,
+            enableTightPacking = false,
+            enableAlphaDilation = true,
+            padding = 8,
+            blockOffset = 1,
+        };
+        importer.textureSettings = new UnityEditor.U2D.SpriteAtlasTextureSettings
+        {
+            readable = false,
+            generateMipMaps = mipmaps,
+            sRGB = true,
+            filterMode = FilterMode.Bilinear,
+            anisoLevel = 1,
+        };
+        TextureImporterPlatformSettings platform = importer.GetPlatformSettings("DefaultTexturePlatform");
+        platform.maxTextureSize = 4096;
+        platform.textureCompression = TextureImporterCompression.Compressed;
+        platform.format = TextureImporterFormat.Automatic;
+        importer.SetPlatformSettings(platform);
+        importer.SaveAndReimport();
     }
 
     static void CreateFolders()
@@ -84,14 +157,24 @@ public static class AssetSetup
         importer.ReadTextureSettings(settings);
         SpriteMeshType meshType = fullRect ? SpriteMeshType.FullRect : SpriteMeshType.Tight;
 
+        // Sprites que vão para um atlas ficam sem compressão: quem é comprimido é o atlas.
+        // Chão e peças de pista ficam fora do atlas: repetidos lado a lado,
+        // dentro de um atlas eles mostram emendas.
+        bool outsideAtlas = path.Contains("/Gerados/") || path.Contains("/Fundo/") || path.Contains("/Pista/");
+        TextureImporterCompression compression = outsideAtlas
+            ? TextureImporterCompression.Compressed
+            : TextureImporterCompression.Uncompressed;
+
         bool ok = importer.textureType == TextureImporterType.Sprite
                   && importer.spriteImportMode == SpriteImportMode.Single
                   && Mathf.Approximately(importer.spritePixelsPerUnit, 100f)
                   && importer.mipmapEnabled == mipmaps
+                  && importer.textureCompression == compression
                   && settings.spriteMeshType == meshType;
         if (ok)
             return;
 
+        importer.textureCompression = compression;
         importer.textureType = TextureImporterType.Sprite;
         importer.spriteImportMode = SpriteImportMode.Single;
         importer.spritePixelsPerUnit = 100f;
