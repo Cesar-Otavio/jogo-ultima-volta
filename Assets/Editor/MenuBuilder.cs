@@ -36,8 +36,10 @@ public static class MenuBuilder
         cameraObject.transform.position = new Vector3(0f, 0f, -10f);
         cameraObject.AddComponent<AudioListener>();
         cameraObject.AddComponent<UniversalAdditionalCameraData>();
+        // A luz precisa estar numa camada que a câmera da vitrine enxerga.
         Light2D light = new GameObject("LuzGlobal").AddComponent<Light2D>();
         light.lightType = Light2D.LightType.Global;
+        light.gameObject.layer = AssetSetup.GarageLayer;
 
         // Vitrine: um carro girando, visto por uma câmera que desenha numa textura.
         RenderTexture showroomTexture = ShowroomTexture();
@@ -174,13 +176,13 @@ public static class MenuBuilder
         UnityEngine.Events.UnityAction[] actions = { menu.ShowTracks, menu.ShowGarage, menu.ShowChallenges, menu.ShowInstructions, menu.ShowCredits, menu.ShowAbout, menu.QuitGame };
         for (int i = 0; i < labels.Length; i++)
         {
-            Button button = UIBuilder.Button(t, "Botao" + labels[i], labels[i], Left, new Vector2(140f, 170f - i * 104f), new Vector2(500f, 94f), actions[i], 40f);
+            Button button = UIBuilder.Button(t, "Botao" + labels[i], labels[i], Left, new Vector2(140f, 200f - i * 100f), new Vector2(500f, 90f), actions[i], 40f);
             if (i == 0)
                 button.GetComponent<UImage>().color = new Color(0.75f, 1f, 0.75f);
         }
 
-        Showroom(t, showroom, Right, new Vector2(-170f, -40f), 640f);
-        UIBuilder.Text(t, "Dica", "W A S D: dirigir · Espaço: drift · Shift: nitro · Esc: pausar", 28f, Bottom, new Vector2(0f, 40f), new Vector2(1400f, 44f));
+        Showroom(t, showroom, Right, new Vector2(-220f, -90f), 560f);
+        UIBuilder.Text(t, "Dica", "W A S D: dirigir · Espaço: drift · Shift: nitro · Esc: pausar", 28f, new Vector2(1f, 0f), new Vector2(-60f, 36f), new Vector2(1000f, 44f), TextAlignmentOptions.Right);
         return screen;
     }
 
@@ -212,7 +214,7 @@ public static class MenuBuilder
             view.playButton.GetComponent<UImage>().color = new Color(0.75f, 1f, 0.75f);
             UIBuilder.AddCall(view.playButton, select.Play, i);
 
-            UImage lockOverlay = UIBuilder.Image(c, "Bloqueio", UIBuilder.Generated("Pixel"), new Color(0f, 0f, 0f, 0.72f), Center, Vector2.zero, new Vector2(345f, 690f));
+            UImage lockOverlay = UIBuilder.Image(c, "Bloqueio", UIBuilder.Generated("Pixel"), new Color(0f, 0f, 0f, 0.85f), Center, Vector2.zero, new Vector2(330f, 676f));
             lockOverlay.raycastTarget = true;
             view.lockOverlay = lockOverlay.gameObject;
             view.lockText = UIBuilder.Text(lockOverlay.transform, "Texto", "Bloqueada", 36f, Center, Vector2.zero, new Vector2(300f, 400f));
@@ -264,7 +266,7 @@ public static class MenuBuilder
             UIBuilder.AddCall(view.actionButton, garage.Action, row);
             garage.rows[row] = view;
         }
-        UIBuilder.Button(t, "BotaoOuvir", "Ouvir", Center, new Vector2(-30f, 340f - 2 * 128f - 42f), new Vector2(150f, 60f), garage.ListenEngine, 24f);
+        UIBuilder.Button(t, "BotaoOuvir", "Ouvir", Center, new Vector2(-40f, 340f - 2 * 128f - 52f), new Vector2(130f, 52f), garage.ListenEngine, 22f);
 
         TMP_Text upgradesTitle = UIBuilder.Text(t, "TituloMelhorias", "Melhorias", 34f, Center, new Vector2(200f, -170f), new Vector2(400f, 50f), TextAlignmentOptions.Left);
         upgradesTitle.color = UIBuilder.Gold;

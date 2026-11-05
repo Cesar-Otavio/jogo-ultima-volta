@@ -100,7 +100,7 @@ public class BotDriver : MonoBehaviour
         if (player == null)
             return 1f;
         float gap = raceCar.Progress - player.Progress;
-        return Mathf.Clamp(1f - gap / 400f, 0.88f, 1.08f);
+        return Mathf.Clamp(1f - gap / 350f, 0.85f, 1.08f);
     }
 
     // Parado contra algo por muito tempo: dá ré. Preso de vez: volta para a pista.

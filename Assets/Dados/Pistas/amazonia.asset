@@ -18,7 +18,7 @@ MonoBehaviour:
   description: Estrada de terra no meio da floresta, com um rio no caminho. Use a rampa para pular!
   sceneName: Amazonia
   laps: 3
-  timeLimit: 255
+  timeLimit: 225
   botCount: 3
   botSkill: 0.45
   rewardMultiplier: 1.2

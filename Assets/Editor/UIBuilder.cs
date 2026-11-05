@@ -79,7 +79,8 @@ public static class UIBuilder
         image.sprite = sprite;
         image.color = color;
         image.type = sliced ? UImage.Type.Sliced : UImage.Type.Simple;
-        image.preserveAspect = !sliced && sprite != null;
+        // Ícones mantêm a proporção; o "Pixel" (fundos lisos) estica para qualquer tamanho.
+        image.preserveAspect = !sliced && sprite != null && sprite.name != "Pixel";
         image.raycastTarget = false;
         return image;
     }

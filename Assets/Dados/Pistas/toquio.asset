@@ -20,7 +20,7 @@ MonoBehaviour:
   laps: 3
   timeLimit: 240
   botCount: 3
-  botSkill: 0.85
+  botSkill: 0.75
   rewardMultiplier: 1.6
   isNight: 1
   themeColor: {r: 0.9, g: 0.4, b: 1, a: 1}

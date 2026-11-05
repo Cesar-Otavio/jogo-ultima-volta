@@ -97,7 +97,11 @@ public static class TrackBuilder
         if (track.isNight)
             NightLights(path, wallDistance);
         if (d.police)
-            Police(path, race);
+        {
+            // Duas viaturas, em lados opostos da pista: o jogador cruza com elas mais de uma vez.
+            Police(path, race, 0.3f, "Viatura1");
+            Police(path, race, 0.8f, "Viatura2");
+        }
 
         string scenePath = SceneFolder + "/" + d.sceneName + ".unity";
         EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene(), scenePath);
@@ -568,12 +572,12 @@ public static class TrackBuilder
         }
     }
 
-    static void Police(TrackPath path, RaceSceneBuilder.Result race)
+    static void Police(TrackPath path, RaceSceneBuilder.Result race, float fraction, string name)
     {
-        float distance = path.Length * 0.5f;
+        float distance = path.Length * fraction;
         Vector2 direction = path.DirectionAt(distance);
         GameObject car = (GameObject)PrefabUtility.InstantiatePrefab(AssetSetup.Load<GameObject>(CarPrefabBuilder.BotPrefabPath));
-        car.name = "Viatura";
+        car.name = name;
         car.transform.SetPositionAndRotation(path.PositionAt(distance), Quaternion.Euler(0f, 0f, Vector2.SignedAngle(Vector2.up, direction)));
 
         RaceCar raceCar = car.GetComponent<RaceCar>();

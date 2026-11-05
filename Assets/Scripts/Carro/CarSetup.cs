@@ -118,7 +118,7 @@ public class CarSetup : MonoBehaviour
             else if (s < 0.15f)
             {
                 saturation = 0f;
-                brightness = Mathf.Lerp(0.35f, 1.6f, v);
+                brightness = Mathf.Lerp(0.55f, 1.6f, v);
             }
             else
                 hue = h * 360f - model.baseHue;

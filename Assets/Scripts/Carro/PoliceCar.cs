@@ -17,11 +17,16 @@ public class PoliceCar : MonoBehaviour
     public float chaseTime = 4f;
     public float cooldown = 6f;
 
+    [Tooltip("Velocidade máxima patrulhando e perseguindo.")]
+    public float patrolSpeed = 6.5f;
+    public float chaseSpeed = 11f;
+
     [Header("Estado (só para consulta durante o Play)")]
     [SerializeField] private float chaseLeft;
     [SerializeField] private float cooldownLeft;
 
     private BotDriver bot;
+    private CarController car;
     private Rigidbody2D playerBody;
 
     public bool IsChasing => chaseLeft > 0f;
@@ -29,6 +34,7 @@ public class PoliceCar : MonoBehaviour
     void Awake()
     {
         bot = GetComponent<BotDriver>();
+        car = GetComponent<CarController>();
     }
 
     void Start()
@@ -58,6 +64,9 @@ public class PoliceCar : MonoBehaviour
         }
 
         siren.SetBool("Ligada", IsChasing);
+
+        // Patrulhando, anda devagar (os corredores a alcançam); perseguindo, acelera.
+        car.maxSpeed = IsChasing ? chaseSpeed : patrolSpeed;
     }
 
     bool SeesPlayer()

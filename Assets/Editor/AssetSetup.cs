@@ -409,13 +409,13 @@ public static class AssetSetup
                 "Rio", 3, 240f, 3, 0.25f, 1f, false, new Color(1f, 0.75f, 0.3f), "sunny_city_bpm120", "sunny_city_climax_bpm135",
                 new[] { Challenge(ChallengeType.TerminarEmPrimeiro, 0, 120), Challenge(ChallengeType.ColetarMoedas, 20, 100), Challenge(ChallengeType.MaximoDeDanos, 1, 100) }),
             Track("amazonia", "Amazônia", "Brasil", "Estrada de terra no meio da floresta, com um rio no caminho. Use a rampa para pular!",
-                "Amazonia", 3, 255f, 3, 0.45f, 1.2f, false, new Color(0.35f, 0.85f, 0.45f), "joyful_jungle_bpm140", "joyful_jungle_climax_bpm155",
+                "Amazonia", 3, 225f, 3, 0.45f, 1.2f, false, new Color(0.35f, 0.85f, 0.45f), "joyful_jungle_bpm140", "joyful_jungle_climax_bpm155",
                 new[] { Challenge(ChallengeType.TerminarNoPodio, 0, 100), Challenge(ChallengeType.TempoDeDrift, 8, 120), Challenge(ChallengeType.SemDanos, 0, 150) }),
             Track("nevada", "Nevada", "EUA", "Deserto com retas longas, rochas, óleo e uma viatura de polícia que não gosta de apressados.",
-                "Nevada", 3, 255f, 3, 0.65f, 1.4f, false, new Color(1f, 0.55f, 0.3f), "hot_roadway_remake_bpm160", "hot_roadway_climax_remake_bpm175",
+                "Nevada", 3, 255f, 3, 0.55f, 1.4f, false, new Color(1f, 0.55f, 0.3f), "hot_roadway_remake_bpm160", "hot_roadway_climax_remake_bpm175",
                 new[] { Challenge(ChallengeType.TerminarEmPrimeiro, 0, 150), Challenge(ChallengeType.UsarNitro, 4, 120), Challenge(ChallengeType.ColetarMoedas, 25, 120) }),
             Track("toquio", "Tóquio", "Japão", "Corrida noturna entre luzes de neon, contra os rivais mais rápidos do jogo.",
-                "Toquio", 3, 240f, 3, 0.85f, 1.6f, true, new Color(0.9f, 0.4f, 1f), "neon_sign_circuit_remake_bpm145", "neon_sign_circuit_climax_remake_bpm160",
+                "Toquio", 3, 240f, 3, 0.75f, 1.6f, true, new Color(0.9f, 0.4f, 1f), "neon_sign_circuit_remake_bpm145", "neon_sign_circuit_climax_remake_bpm160",
                 new[] { Challenge(ChallengeType.TerminarEmPrimeiro, 0, 200), Challenge(ChallengeType.MaximoDeDanos, 1, 150), Challenge(ChallengeType.TempoSobrando, 30, 150) }),
         };
         catalog.tracksUnlockedAtStart = 2;
