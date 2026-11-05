@@ -12,6 +12,14 @@
 /[Bb]uilds/
 /[Ee]ntrega/
 
+# Sprites da CraftPix: a licença não permite publicar os arquivos de arte.
+# Os .meta ficam no repositório; os PNGs voltam com tools/importar_sprites_craftpix.ps1.
+# (Neste computador eles continuam no histórico local, para o ZIP do projeto completo.)
+/Assets/Sprites/**/*.png
+!/Assets/Sprites/Gerados/*.png
+/Assets/Texturas/Asfalto.png
+/Assets/Texturas/Terra.png
+
 # Arquivos gerados pelo Visual Studio / VS Code / Rider
 .vs/
 .vscode/
