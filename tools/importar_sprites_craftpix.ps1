@@ -1,4 +1,4 @@
-# Recoloca no projeto os sprites da CraftPix, que não vão para o GitHub
+﻿# Recoloca no projeto os sprites da CraftPix, que não vão para o GitHub
 # (a licença gratuita não permite redistribuir os arquivos de arte).
 #
 # Rode ANTES de abrir o projeto na Unity, para os sprites manterem as
