@@ -8,7 +8,7 @@ A tabela de cada parte mostra, na mesma linha, o que é falado e o que aparece n
 
 ## Antes da aula (jogador)
 
-- [ ] Instalar o jogo no computador da sala com `UltimaVolta_Instalador_v2.0.exe` (ou levar o notebook com o jogo instalado).
+- [ ] Instalar o jogo no computador da sala com `UltimaVolta_Instalador_v2.1.exe` (ou levar o notebook com o jogo instalado).
   - Se o Windows avisar, clicar em **Mais informações** e depois em **Executar assim mesmo**.
 - [ ] Abrir o jogo uma vez e testar o som da sala.
 - [ ] No menu, apertar **F9**: libera todas as pistas e dá 5000 moedas para a demonstração.

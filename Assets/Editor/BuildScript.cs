@@ -10,7 +10,7 @@ using UnityEngine;
 public static class BuildScript
 {
     public const string ExePath = "Builds/UltimaVolta/UltimaVolta.exe";
-    public const string Version = "2.0";
+    public const string Version = "2.1";
 
     [MenuItem("Última Volta/6. Gerar executável")]
     public static void BuildGame()

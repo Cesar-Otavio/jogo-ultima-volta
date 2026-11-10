@@ -20,7 +20,7 @@ Os scripts de cada área estão listados em [Como o projeto está organizado](#c
 
 ### Pelo instalador (Windows 64 bits, recomendado)
 
-1. Baixe `UltimaVolta_Instalador_v2.0.exe` na página [Releases](https://github.com/Cesar-Otavio/jogo-ultima-volta/releases) do GitHub. O mesmo arquivo foi entregue no CONNECT+.
+1. Baixe `UltimaVolta_Instalador_v2.1.exe` na página [Releases](https://github.com/Cesar-Otavio/jogo-ultima-volta/releases) do GitHub. O mesmo arquivo foi entregue no CONNECT+.
 2. Abra o instalador e siga os passos. Ele instala só para o seu usuário, sem pedir senha de administrador, e cria um atalho no menu Iniciar (e, se você marcar, na área de trabalho).
 3. O jogo abre em tela cheia, no menu. Para sair, use o botão **Sair**.
 4. Para desinstalar, use **Configurações > Aplicativos** do Windows.
@@ -30,6 +30,8 @@ Os scripts de cada área estão listados em [Como o projeto está organizado](#c
 Extraia `UltimaVolta_Jogo_Windows.zip` (também na página Releases) em uma pasta e abra `UltimaVolta.exe`.
 
 O instalador e o executável não têm assinatura digital. Se o Windows mostrar um aviso, clique em **Mais informações** e depois em **Executar assim mesmo**.
+
+Em computadores com o **Controle Inteligente de Aplicativos** do Windows ligado, o Windows pode bloquear o instalador ou o desinstalador por falta de assinatura. Nesse caso, use o ZIP. Para remover o jogo instalado, apague a pasta `%LOCALAPPDATA%\Programs\Ultima Volta` e o atalho do menu Iniciar.
 
 ### Pelo projeto na Unity
 

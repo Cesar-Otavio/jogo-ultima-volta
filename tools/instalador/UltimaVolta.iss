@@ -1,10 +1,10 @@
 ﻿; Instalador do Última Volta para Windows (Inno Setup 6).
-; Gera Entrega\UltimaVolta_Instalador_v2.0.exe a partir do build em Builds\UltimaVolta.
+; Gera Entrega\UltimaVolta_Instalador_v2.1.exe a partir do build em Builds\UltimaVolta.
 ; Para compilar: abra este arquivo no Inno Setup e clique em Build > Compile,
 ; ou rode: ISCC.exe tools\instalador\UltimaVolta.iss
 
 #define AppName "Última Volta"
-#define AppVersion "2.0"
+#define AppVersion "2.1"
 #define AppPublisher "Grupo Última Volta"
 #define AppExe "UltimaVolta.exe"
 
