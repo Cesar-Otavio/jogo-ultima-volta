@@ -351,7 +351,7 @@ public static class RaceSceneBuilder
         RectTransform resultWindow = UIBuilder.Window(resultOverlay.transform, "Janela", "Resultado", new Vector2(1560f, 1000f), out TMP_Text resultTitle);
         screens.resultTitle = resultTitle;
         screens.resultMessage = UIBuilder.Text(resultWindow, "Mensagem", "", 36f, TopCenter, new Vector2(0f, -140f), new Vector2(1360f, 60f));
-        screens.rankingText = UIBuilder.Text(resultWindow, "Classificacao", "", 32f, Center, new Vector2(-400f, 50f), new Vector2(600f, 480f), TextAlignmentOptions.TopLeft);
+        screens.rankingText = UIBuilder.Text(resultWindow, "Classificacao", "", 28f, Center, new Vector2(-400f, 40f), new Vector2(600f, 500f), TextAlignmentOptions.TopLeft);
         screens.rewardsText = UIBuilder.Text(resultWindow, "Recompensas", "", 28f, Center, new Vector2(340f, 50f), new Vector2(720f, 480f), TextAlignmentOptions.TopLeft);
         UIBuilder.Button(resultWindow, "BotaoTentar", "Tentar de novo", Center, new Vector2(-470f, -330f), new Vector2(430f, 112f), race.RestartRace);
         screens.nextTrackButton = UIBuilder.Button(resultWindow, "BotaoProxima", "Próxima pista", Center, new Vector2(0f, -330f), new Vector2(430f, 112f), race.GoToNextTrack).gameObject;

@@ -26,6 +26,10 @@ public class CarEffects : MonoBehaviour
     public SpriteRenderer exhaustFlame;
     public float flameDuration = 0.09f;
 
+    [Header("Carro com estados (Animator)")]
+    [Tooltip("Parâmetros \"Velocidade\" (float) e \"Derrapando\" (bool): Parado, Andando e Derrapando.")]
+    public Animator bodyAnimator;
+
     [Header("Luzes com estados (Animator)")]
     [Tooltip("Parâmetro bool \"Freando\".")]
     public Animator brakeLights;
@@ -104,7 +108,12 @@ public class CarEffects : MonoBehaviour
         bool dusty = SurfaceInfo.MakesDust(car.Surface) && Mathf.Abs(car.ForwardSpeed) > 3f;
         SetEmission(dust, dusty ? 25f * car.SpeedPercent : 0f);
 
-        // Os estados das luzes ficam nos Animators: aqui só mudamos os parâmetros.
+        // Os estados ficam nos Animators: aqui só mudamos os parâmetros.
+        if (bodyAnimator != null)
+        {
+            bodyAnimator.SetFloat("Velocidade", Mathf.Abs(car.ForwardSpeed));
+            bodyAnimator.SetBool("Derrapando", car.IsDrifting);
+        }
         if (brakeLights != null)
             brakeLights.SetBool("Freando", car.IsBraking);
         if (nitroFlame != null)

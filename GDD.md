@@ -152,6 +152,10 @@ Além das melhorias:
 
 A pintura é feita por um shader próprio, que gira a cor da lataria ou tinge as partes brancas, sem precisar de sprites novos.
 
+### Ranking
+
+Cada pista guarda os 5 melhores tempos feitos neste computador. A tela de resultado mostra esse ranking e destaca o tempo da corrida, quando ele entra.
+
 ### Desafios
 
 São 15 desafios, 3 por pista, de 8 tipos:
@@ -176,7 +180,7 @@ São 15 desafios, 3 por pista, de 8 tipos:
 | HUD | Tempo, volta, posição, moedas, corações, velocidade, nitro, minimapa e avisos (última volta, contramão) |
 | Contagem | Semáforo com 3 luzes e número grande |
 | Pausa | Continuar, Reiniciar, Voltar ao menu |
-| Resultado | Título, tempo, classificação, recompensas; Tentar de novo, Próxima pista, Voltar ao menu |
+| Resultado | Título, tempo, classificação, ranking da pista (5 melhores tempos), recompensas; Tentar de novo, Próxima pista, Voltar ao menu |
 
 O modo apresentação (F9 no menu) libera todas as pistas e dá 5000 moedas.
 
@@ -188,6 +192,7 @@ O modo apresentação (F9 no menu) libera todas as pistas e dá 5000 moedas.
 - A decoração (prédios, árvores, arbustos, rochas, arquibancadas, mar e rio) é espalhada por código, longe da pista.
 
 **Animação com estados (Animator):**
+- Carro: Parado (motor ligado, tremendo) ↔ Andando ↔ Derrapando (traseira balançando), pelos parâmetros Velocidade e Derrapando.
 - Luz de freio: Apagada → Acendendo → Acesa.
 - Nitro: Desligado → Ligando → Ativo → Desligando.
 - Sirene: Desligada ↔ Ligada.

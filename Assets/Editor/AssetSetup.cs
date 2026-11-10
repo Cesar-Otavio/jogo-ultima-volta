@@ -355,6 +355,23 @@ public static class AssetSetup
         Connect(sOff, sOn, "Ligada", true);
         Connect(sOn, sOff, "Ligada", false);
 
+        // Carro: Parado (motor ligado, tremendo) <-> Andando <-> Derrapando (traseira balançando).
+        AnimatorController body = NewController("Carro", "Derrapando");
+        body.AddParameter("Velocidade", AnimatorControllerParameterType.Float);
+        AnimatorStateMachine bodyMachine = body.layers[0].stateMachine;
+        AnimatorState idle = AddState(bodyMachine, "Parado", MotionClip("CarroParado",
+            new[] { 0f, 0.015f, -0.015f, 0.01f, 0f }, new[] { 0f, 0.02f, -0.01f, -0.02f, 0f }, 20));
+        AnimatorState moving = AddState(bodyMachine, "Andando", MotionClip("CarroAndando",
+            new[] { 0f, 0f }, new[] { 0f, 0f }, 10));
+        AnimatorState drifting = AddState(bodyMachine, "Derrapando", MotionClip("CarroDerrapando",
+            new[] { 0f, 0.05f, 0f, -0.05f, 0f }, new[] { 0f, 0f, 0f, 0f, 0f }, 12));
+        bodyMachine.defaultState = idle;
+        ConnectSpeed(idle, moving, AnimatorConditionMode.Greater, 0.5f);
+        ConnectSpeed(moving, idle, AnimatorConditionMode.Less, 0.3f);
+        ConnectSpeed(drifting, idle, AnimatorConditionMode.Less, 0.3f);
+        Connect(moving, drifting, "Derrapando", true);
+        Connect(drifting, moving, "Derrapando", false);
+
         AssetDatabase.SaveAssets();
     }
 
@@ -394,6 +411,43 @@ public static class AssetSetup
         AnimationUtility.SetAnimationClipSettings(clip, settings);
         EditorUtility.SetDirty(clip);
         return clip;
+    }
+
+    // Clipe que mexe a posição do objeto (tremor do motor, balanço do drift), em repetição.
+    static AnimationClip MotionClip(string name, float[] xs, float[] ys, float fps)
+    {
+        string path = AnimationsFolder + "/" + name + ".anim";
+        AnimationClip clip = Load<AnimationClip>(path);
+        if (clip == null)
+        {
+            clip = new AnimationClip();
+            AssetDatabase.CreateAsset(clip, path);
+        }
+        clip.ClearCurves();
+        clip.frameRate = fps;
+
+        AnimationCurve x = new AnimationCurve(), y = new AnimationCurve();
+        for (int i = 0; i < xs.Length; i++)
+        {
+            x.AddKey(i / fps, xs[i]);
+            y.AddKey(i / fps, ys[i]);
+        }
+        AnimationUtility.SetEditorCurve(clip, EditorCurveBinding.FloatCurve("", typeof(Transform), "m_LocalPosition.x"), x);
+        AnimationUtility.SetEditorCurve(clip, EditorCurveBinding.FloatCurve("", typeof(Transform), "m_LocalPosition.y"), y);
+
+        AnimationClipSettings settings = AnimationUtility.GetAnimationClipSettings(clip);
+        settings.loopTime = true;
+        AnimationUtility.SetAnimationClipSettings(clip, settings);
+        EditorUtility.SetDirty(clip);
+        return clip;
+    }
+
+    static void ConnectSpeed(AnimatorState from, AnimatorState to, AnimatorConditionMode mode, float threshold)
+    {
+        AnimatorStateTransition transition = from.AddTransition(to);
+        transition.hasExitTime = false;
+        transition.duration = 0.1f;
+        transition.AddCondition(mode, threshold, "Velocidade");
     }
 
     static AnimatorController NewController(string name, string boolParameter)

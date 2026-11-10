@@ -108,7 +108,7 @@ public class RaceScreens : MonoBehaviour
                 + " de " + raceManager.TotalLaps + " voltas.";
         }
 
-        rankingText.text = BuildRanking();
+        rankingText.text = BuildRanking() + BuildTopTimes(result);
         rewardsText.text = BuildRewards(result, track);
 
         TrackInfo next = raceManager.catalog.NextTrack(track);
@@ -127,6 +127,23 @@ public class RaceScreens : MonoBehaviour
             string name = car.isPlayer ? "<color=#FFE066>" + car.driverName + "</color>" : car.driverName;
             string time = car.Finished ? RaceTimer.FormatPrecise(car.FinishTime) : "correndo";
             text.Append(car.Position + "º<pos=12%>" + name + "<pos=68%>" + time + "\n");
+        }
+        return text.Append("\n").ToString();
+    }
+
+    // Ranking da pista: os 5 melhores tempos salvos neste computador.
+    string BuildTopTimes(RaceResult result)
+    {
+        StringBuilder text = new StringBuilder("<b>Ranking da pista</b>\n");
+        if (result.topTimes.Count == 0)
+            return text.Append("Ainda sem tempos: termine a corrida para entrar.").ToString();
+
+        for (int i = 0; i < result.topTimes.Count; i++)
+        {
+            string line = (i + 1) + "º<pos=12%>" + RaceTimer.FormatPrecise(result.topTimes[i]);
+            if (i + 1 == result.rankingPlace)
+                line = "<color=#FFE066>" + line + "<pos=40%>(esta corrida)</color>";
+            text.Append(line + "\n");
         }
         return text.ToString();
     }

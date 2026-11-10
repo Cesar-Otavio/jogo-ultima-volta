@@ -18,13 +18,18 @@ Os scripts de cada área estão listados em [Como o projeto está organizado](#c
 
 ## Como jogar
 
-### Pelo executável (Windows 64 bits)
+### Pelo instalador (Windows 64 bits, recomendado)
 
-1. Extraia `UltimaVolta_Jogo_Windows.zip` em uma pasta. O arquivo foi entregue no CONNECT+ e também fica na página **Releases** do GitHub, quando publicado lá.
-2. Abra `UltimaVolta.exe`. O jogo abre em tela cheia, no menu.
-3. Para sair, use o botão **Sair** do menu.
+1. Baixe `UltimaVolta_Instalador_v2.0.exe` na página [Releases](https://github.com/Cesar-Otavio/jogo-ultima-volta/releases) do GitHub. O mesmo arquivo foi entregue no CONNECT+.
+2. Abra o instalador e siga os passos. Ele instala só para o seu usuário, sem pedir senha de administrador, e cria um atalho no menu Iniciar (e, se você marcar, na área de trabalho).
+3. O jogo abre em tela cheia, no menu. Para sair, use o botão **Sair**.
+4. Para desinstalar, use **Configurações > Aplicativos** do Windows.
 
-O executável não tem assinatura digital. Se o Windows mostrar um aviso, clique em **Mais informações** e depois em **Executar assim mesmo**.
+### Sem instalar
+
+Extraia `UltimaVolta_Jogo_Windows.zip` (também na página Releases) em uma pasta e abra `UltimaVolta.exe`.
+
+O instalador e o executável não têm assinatura digital. Se o Windows mostrar um aviso, clique em **Mais informações** e depois em **Executar assim mesmo**.
 
 ### Pelo projeto na Unity
 
@@ -78,7 +83,7 @@ O executável não tem assinatura digital. Se o Windows mostrar um aviso, clique
 | Tempo esgotado | O cronômetro chega a zero. |
 | Carro quebrado | Os corações acabam. |
 
-A tela de resultado mostra a classificação, as moedas ganhas, os desafios completos e se uma pista nova foi liberada.
+A tela de resultado mostra a classificação, o **ranking da pista** (os 5 melhores tempos já feitos nela), as moedas ganhas, os desafios completos e se uma pista nova foi liberada.
 
 ## Pistas
 
@@ -116,7 +121,7 @@ O progresso fica salvo no computador, e **Desafios > Zerar progresso** apaga tud
 |---|---|
 | Jogo completo, com início, meio e fim | Menu, corridas, telas de resultado |
 | Colisão e física | Rigidbody2D nos carros, muros, barris que rolam, batidas entre carros, óleo, pisos, rampas |
-| Animação de sprites e objetos com estados | Animator da luz de freio, do nitro e da sirene; sprites de dano; pulo; moedas girando |
+| Animação de sprites e objetos com estados | Animator do próprio carro (Parado, Andando, Derrapando), da luz de freio, do nitro e da sirene; sprites de dano; pulo; moedas girando |
 | Áudio | 6 músicas, motor que muda com a velocidade, derrapagem, nitro, estouros, batidas, moedas, fogos |
 | HUD e menus | Tempo, volta, posição, corações, nitro, velocidade, moedas e minimapa; 7 telas no menu |
 | Vitória, game over, reiniciar e voltar | Resultado, pausa, "Tentar de novo", "Próxima pista", "Voltar ao menu" |
@@ -124,7 +129,7 @@ O progresso fica salvo no computador, e **Desafios > Zerar progresso** apaga tud
 | Objetivo claro e personagem controlável | Instruções no menu; carro no teclado |
 | Inimigo ou obstáculo com comportamento próprio | Bots que disputam a corrida e viaturas que perseguem |
 | Progressão | 5 pistas liberadas em ordem, rivais mais rápidos a cada pista, oficina |
-| Extras sugeridos | Várias pistas, recorde por pista, desafios |
+| Extras sugeridos para corrida | Várias pistas e ranking com os 5 melhores tempos de cada pista; também desafios e oficina |
 | Playtesting e balanceamento | Testes automáticos em todas as pistas e teste manual (ver [Testes](#testes)) |
 
 ## Como o projeto está organizado
@@ -143,7 +148,7 @@ Assets/
   Sprites/    sprites usados (CraftPix) e Gerados/ (desenhados por código)
   Texturas/   texturas da pista e das câmeras do minimapa e da oficina
 docs/         roteiro da apresentação
-tools/        script que recoloca os sprites da CraftPix
+tools/        script que recoloca os sprites da CraftPix e o projeto do instalador (Inno Setup)
 GDD.md        documento de design simplificado
 ```
 
@@ -179,6 +184,9 @@ As cenas e os prefabs são montados por scripts. Para reconstruir tudo, use o me
 3. Converter a pista de Treino
 4. Construir pistas novas
 5. Construir o menu
+6. Gerar executável (com nome, versão e ícone)
+
+O item **Reconstruir tudo e gerar executável** faz os seis passos de uma vez. O instalador é gerado depois, abrindo `tools/instalador/UltimaVolta.iss` no [Inno Setup](https://jrsoftware.org/isinfo.php) e clicando em **Compile**.
 
 Para mudar o traçado de uma pista, edite `Assets/Editor/TrackDesigns.cs` e rode o passo 4.
 
@@ -194,6 +202,9 @@ O jogo não usa variáveis `static` com estado: os scripts se ligam por campos n
   - A rampa da Amazônia faz o carro pular o rio a cada volta.
   - As viaturas de Nevada ligam a sirene e perseguem.
   - O som da largada tem bipes em 0, 1, 2 e 3 s, junto com o 3, 2, 1, VAI da tela.
+  - O Animator do carro passa por Parado (na largada), Andando e Derrapando (no drift).
+  - O ranking da pista grava o tempo novo na posição certa.
+- **Instalador:** instalado em modo silencioso, o jogo instalado abriu sem erros e o desinstalador removeu tudo, inclusive o atalho.
 - **Telas:** fotografadas uma a uma: menu, pistas, oficina, desafios, instruções, créditos, sobre e HUD de cada pista.
 - **Teste manual:** um integrante jogou o executável e testou menu, oficina, todas as pistas, pausa, resultado e desafios.
 - **Testes da versão básica:** os 14 testes continuam documentados no histórico (tag `v1.0-basico`).

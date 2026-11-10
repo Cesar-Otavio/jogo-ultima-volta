@@ -6,6 +6,8 @@ public class TrackRecord
     public string trackId;
     public float bestTime;
     public int bestPosition;
+    [UnityEngine.Tooltip("Ranking da pista: os 5 melhores tempos, do menor para o maior.")]
+    public List<float> topTimes = new List<float>();
 }
 
 // Tudo o que o jogo guarda entre uma partida e outra.

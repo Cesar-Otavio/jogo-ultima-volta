@@ -1,88 +1,104 @@
 # Roteiro da apresentação: Última Volta
 
-Para **uma pessoa** apresentar, em até **15 minutos**: o jogo, o código e a contribuição de cada integrante.
+**Formato:** duas pessoas e até **15 minutos**.
+- O **apresentador** fala.
+- O **jogador** fica no computador, joga e abre o código quando o apresentador pedir.
 
-## Antes da aula
+A tabela de cada parte mostra, na mesma linha, o que é falado e o que aparece na tela.
 
-- [ ] Copiar a pasta do jogo (`UltimaVolta_Jogo_Windows.zip`, já extraída) para o computador da sala, ou levar o notebook.
-- [ ] Abrir o jogo uma vez antes, para o Windows liberar o executável: **Mais informações** e depois **Executar assim mesmo**.
-- [ ] Ligar o som da sala e testar o volume no menu.
-- [ ] No menu, apertar **F9** para liberar todas as pistas e ganhar 5000 moedas.
-- [ ] Deixar o projeto aberto na Unity, ou o GitHub no navegador, para mostrar o código.
-  - Arquivos para deixar abertos em abas: `RaceManager.cs`, `CarController.cs`, `BotDriver.cs`, `TrackDesigns.cs` e o Animator `Nitro.controller`.
-- [ ] Plano B: se o computador da sala travar, mostrar o vídeo ou as fotos do jogo e o código pelo GitHub.
+## Antes da aula (jogador)
+
+- [ ] Instalar o jogo no computador da sala com `UltimaVolta_Instalador_v2.0.exe` (ou levar o notebook com o jogo instalado).
+  - Se o Windows avisar, clicar em **Mais informações** e depois em **Executar assim mesmo**.
+- [ ] Abrir o jogo uma vez e testar o som da sala.
+- [ ] No menu, apertar **F9**: libera todas as pistas e dá 5000 moedas para a demonstração.
+- [ ] Deixar o GitHub aberto no navegador, numa aba: https://github.com/Cesar-Otavio/jogo-ultima-volta
+  - Arquivos para mostrar: `Assets/Scripts/Corrida/RaceManager.cs`, `Assets/Scripts/Carro/CarController.cs`, `Assets/Scripts/Carro/BotDriver.cs` e `Assets/Editor/TrackDesigns.cs`.
+- [ ] Plano B: se o computador da sala falhar, usar o notebook ou mostrar o código pelo GitHub.
 
 ## 1. Abertura (1 min)
 
-> "Somos Amanda, Cesar, Giovana, Giovani e Marcus. Nosso jogo é o **Última Volta**, uma corrida 2D com vista de cima, feita em Unity 6 com C#. Você corre contra rivais em 5 pistas pelo mundo e precisa terminar no pódio antes do tempo acabar, sem quebrar o carro."
+| Apresentador fala | Jogador faz |
+|---|---|
+| "Somos Amanda, Cesar, Giovana, Giovani e Marcus. Este é o **Última Volta**, um jogo de corrida 2D com vista de cima, feito em Unity com C#." | Deixa o **menu** na tela, com o carro girando na vitrine. |
+| "O objetivo é completar as voltas antes do tempo acabar, sem quebrar o carro, e terminar no pódio para liberar a próxima pista. São 5 pistas: Treino, Rio de Janeiro, Amazônia, Nevada e Tóquio." | Abre **Jogar** e passa o mouse pelos cartões das pistas. |
 
-Mostrar o **menu**: o carro girando na vitrine e os botões.
+## 2. O jogo funcionando (7 min)
 
-## 2. Jogo funcionando (6 min)
+### Treino: controles e drift (1 min 30 s)
 
-1. **Instruções (20 s):** mostrar a tela rapidamente.
-   > "Aqui estão o objetivo e os controles: W A S D, Espaço para drift, Shift para nitro."
-2. **Treino (1 min):** dar uma volta.
-   - Fazer um drift na curva e mostrar as marcas de pneu, a fumaça e a barra de nitro enchendo.
-   - Usar o nitro: a chama azul é uma **animação com estados**.
-   - Frear: a luz de freio acende.
-3. **Rio de Janeiro (2 min):** uma volta.
-   - O semáforo 3-2-1 e o som da largada.
-   - Os **3 rivais** e a posição mudando no HUD.
-   - As moedas, um barril (dano, o carro amassa e pisca) e o minimapa.
-   - Apertar **Esc**: a pausa para tempo, física e som.
-   - **Voltar ao menu.**
-4. **Oficina (1 min):**
-   - Trocar a pintura e o modelo, com a vitrine mudando na hora.
-   - Usar **Ouvir** em dois motores.
-   - Comprar uma melhoria.
-   > "O dinheiro vem das corridas e dos desafios."
-5. **Nevada ou Tóquio (1 min 30 s):**
-   - Nevada: passar perto da viatura, que liga a sirene e persegue.
-   - Tóquio: mostrar a corrida noturna, com faróis e neon.
-   - Deixar chegar ao fim (ou reiniciar) e mostrar a **tela de resultado**, com classificação, moedas e desafios. No pódio, os fogos de artifício.
-6. **Desafios, Créditos e Sobre (20 s):**
-   > "A tela de créditos traz as fontes de todos os sprites e sons. A tela Sobre traz a disciplina e o grupo."
+| Apresentador fala | Jogador faz |
+|---|---|
+| "O jogador controla o carro com W, A, S e D." | Escolhe **Treino**. Na largada, o carro treme com o motor ligado. |
+| "O carro tem animações com estados no Animator: parado, andando e derrapando. A luz de freio e a chama do nitro também têm estados." | Acelera, freia (a luz de freio acende) e acelera de novo. |
+| "Segurando Espaço na curva, o carro derrapa: aparecem marca de pneu, fumaça e o som do pneu. O drift enche a barra de nitro." | Faz um **drift** numa curva. |
+| "Com Shift, o nitro acelera o carro. Ao soltar o acelerador em alta velocidade, o escapamento estoura." | Usa o **nitro** numa reta. |
+
+### Rio de Janeiro: rivais, HUD e física (2 min 30 s)
+
+| Apresentador fala | Jogador faz |
+|---|---|
+| "A largada tem semáforo e contagem com som." | Aperta **Esc**, **Voltar ao menu** e escolhe **Rio de Janeiro**. |
+| "Corremos contra 3 rivais controlados pelo computador. Eles seguem a pista, freiam antes das curvas, desviam e usam nitro." | Corre e tenta ultrapassar. |
+| "No HUD ficam o tempo, a volta, a posição, as moedas, a velocidade, o nitro, os corações e o minimapa." | Pega algumas **moedas**. |
+| "Barris sempre causam dano. Paredes e carros, só em batida forte. A cada dano, o carro amassa e pisca." | Bate de leve num **barril** ou num rival. |
+| "O Esc pausa tudo: tempo, física e som." | Aperta **Esc**, mostra a pausa, clica **Continuar**. |
+
+### Oficina (1 min)
+
+| Apresentador fala | Jogador faz |
+|---|---|
+| "As corridas e os desafios dão moedas para a oficina. Dá para trocar o modelo, a pintura, o som do motor e o escapamento, e melhorar motor, pneus, freios, blindagem e nitro." | **Esc**, **Voltar ao menu**, **Oficina**. Troca a pintura e o modelo e clica **Ouvir** em dois motores. Compra uma melhoria. |
+
+### Nevada e Tóquio (1 min 30 s)
+
+| Apresentador fala | Jogador faz |
+|---|---|
+| "Em Nevada há duas viaturas da polícia. Elas patrulham devagar; se o jogador passa rápido perto, ligam a sirene e perseguem." | Corre em **Nevada** e passa perto de uma viatura. |
+| "Tóquio é à noite, com faróis e neon, e tem os rivais mais rápidos. A dificuldade sobe a cada pista." | Volta ao menu e corre um trecho de **Tóquio**. |
+
+### Resultado, desafios e créditos (30 s)
+
+| Apresentador fala | Jogador faz |
+|---|---|
+| "No fim aparecem a classificação, as moedas, os desafios e o ranking com os 5 melhores tempos da pista. No pódio, tem fogos." | Mostra uma **tela de resultado**. Se não der tempo de terminar uma corrida, pula esta linha. |
+| "Cada pista tem 3 desafios. A tela de créditos traz a fonte de todos os sprites e sons, e a tela Sobre traz a disciplina e o grupo." | Abre **Desafios**, **Créditos** e **Sobre**. |
 
 ## 3. Requisitos da disciplina (1 min)
 
-Mostrar rapidamente a tabela "Requisitos da disciplina" do README, ou falar:
-
-> "Tem início, meio e fim. Usa física com Rigidbody2D: batidas, barris, drift e pisos. Tem animações com estados no Animator: freio, nitro e sirene. Tem áudio, HUD e menus, vitória e derrota, e reiniciar. Tem tela de créditos. Os inimigos têm comportamento próprio: bots que disputam a corrida e viaturas que perseguem. A progressão vem das 5 pistas liberadas em ordem, com rivais mais rápidos."
-
-## 4. Código (4 min)
-
-1. **`RaceManager` (1 min):**
-   > "É o único lugar que decide o estado da corrida: contagem, correndo, pausado, terminou ou perdeu. Os outros scripts só avisam o que aconteceu."
-   - Mostrar o enum `RaceState` e a função `LapCompleted`.
-2. **`CarController` (1 min):**
-   > "O mesmo código move o jogador e os bots. A velocidade é separada em frente e lado. O drift é a aderência lateral baixa: o carro gira mais rápido do que anda."
-   - Mostrar `UpdateLateralSpeed`.
-3. **`BotDriver` (1 min):**
-   > "O bot mira um ponto à frente na linha central da pista e mede quanto a pista vira, para frear antes da curva. Também desvia de carros e se recupera quando bate."
-4. **Animator `Nitro` (30 s):** mostrar os 4 estados e as transições pelo parâmetro "Ativo".
-5. **`TrackDesigns` (30 s):**
-   > "As pistas são listas de pontos. Uma ferramenta de Editor gera a malha da pista, os muros, os itens e a decoração. Mudar a pista é mudar os pontos."
-
-## 5. Contribuição de cada integrante (2 min)
-
-| Integrante | O que falar |
+| Apresentador fala | Jogador faz |
 |---|---|
-| Amanda | Fez a interface: menu, escolha de pista, oficina, desafios, créditos, HUD, pausa e resultado. |
-| Cesar | Coordenou o grupo, fez a arquitetura da corrida (RaceManager, cronômetro, recompensas e progresso salvo), cuidou do GitHub, do build e da entrega. |
-| Giovana | Cuidou da arte e do áudio (escolha, licenças e créditos), da pintura do carro, das animações com estados e dos efeitos (fumaça, faíscas, fogos). |
-| Giovani | Programou a física e a direção: drift, nitro, pisos, danos, números da oficina e a câmera. |
-| Marcus | Projetou as 5 pistas e fez os bots, as viaturas, os itens da pista, os testes de jogo e o balanceamento dos tempos. |
+| "O jogo tem início, meio e fim, vitória e derrota, reiniciar e voltar ao menu. Usa física com Rigidbody2D: batidas, barris que rolam, drift e pisos. Tem animação com estados, áudio, HUD, menus e tela de créditos. Os inimigos têm comportamento próprio, os bots e a polícia. A progressão vem das pistas liberadas em ordem, e o extra é o ranking de tempos." | Abre o **README** no GitHub, na tabela "Requisitos da disciplina". |
+
+## 4. Código-fonte (4 min)
+
+| Apresentador fala | Jogador faz |
+|---|---|
+| "O código está separado por assunto: Carro, Corrida, Dados, Efeitos, Interface e Pista." | Mostra a pasta `Assets/Scripts` no GitHub. |
+| "O **RaceManager** é o único lugar que decide o estado da corrida: contagem, correndo, pausado, terminou ou perdeu. Os outros scripts só avisam o que aconteceu." | Abre `RaceManager.cs` e desce até o `enum RaceState` e a função `LapCompleted`. |
+| "O **CarController** move o jogador e os bots com o mesmo código. A velocidade é separada em frente e lado; o drift é a aderência lateral baixa." | Abre `CarController.cs`, na função `UpdateLateralSpeed`. |
+| "O **BotDriver** mira um ponto à frente na linha central da pista e mede quanto ela vai virar para frear antes da curva." | Abre `BotDriver.cs`, na função `FixedUpdate`. |
+| "As pistas são listas de pontos. Uma ferramenta de Editor gera a pista, os muros, os itens e a decoração a partir delas." | Abre `TrackDesigns.cs`, na pista do Rio. |
+
+## 5. Contribuições (1 min 30 s)
+
+| Apresentador fala | Jogador faz |
+|---|---|
+| "A Amanda fez a interface: menus, oficina, desafios, HUD e telas da corrida." | Mostra a tabela de integrantes do README. |
+| "O Cesar coordenou o grupo e fez a arquitetura da corrida, o salvamento do progresso, o GitHub e o build." | — |
+| "A Giovana cuidou da arte, do áudio, das licenças e créditos, das animações e dos efeitos." | — |
+| "O Giovani programou a física do carro: drift, nitro, pisos, danos, números da oficina e a câmera." | — |
+| "O Marcus projetou as pistas e fez os bots, a polícia, os itens e os testes de equilíbrio." | — |
 
 ## 6. Encerramento (30 s)
 
-> "O projeto está no GitHub, com README, GDD e instruções. O executável e o projeto completo foram entregues no CONNECT+. Obrigado!"
-
-Abrir para perguntas, se houver tempo.
+| Apresentador fala | Jogador faz |
+|---|---|
+| "O projeto está no GitHub com README, GDD e o instalador na página Releases. Obrigado! Ficamos à disposição para perguntas." | Volta para o **menu** do jogo. |
 
 ## Perguntas prováveis
 
-- **Por que os PNGs não estão no GitHub?** A licença gratuita da CraftPix permite usar os sprites no jogo, mas não redistribuir os arquivos. O projeto completo foi entregue pelo CONNECT+. Quem baixa do GitHub usa o menu **Última Volta > Importar sprites da CraftPix**.
+- **Por que os sprites não estão no GitHub?** A licença gratuita da CraftPix deixa usar no jogo, mas não redistribuir os arquivos. O projeto completo foi entregue pelo CONNECT+, e o GitHub tem um script que recoloca os sprites.
 - **Como a volta é contada?** Pela distância percorrida na linha central da pista. A volta só vale depois de passar pelos 8 setores em ordem, então atalho e ré não contam.
-- **Como os bots não ficam muito longe?** Eles ajustam o ritmo conforme a distância para o jogador (até 15% mais devagar, ou 8% mais rápido).
-- **Usaram IA?** Sim, um assistente de programação, como a disciplina permite. O README informa isso.
+- **Como os bots não ficam muito longe?** Eles ajustam o ritmo pela distância até o jogador: até 15% mais devagar ou 8% mais rápido.
+- **Usaram IA?** Sim, um assistente de programação, como a disciplina permite. Isso está escrito no README.

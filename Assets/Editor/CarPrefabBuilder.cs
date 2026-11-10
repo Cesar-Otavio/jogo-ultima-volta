@@ -59,6 +59,10 @@ public static class CarPrefabBuilder
         SpriteRenderer body = Sprite(root.transform, "Carroceria", catalog.cars[0].damageSprites[0], OrderBody,
             AssetSetup.Load<Material>(AssetSetup.MaterialsFolder + "/Carro.mat"));
 
+        // Estados do próprio carro: Parado, Andando e Derrapando.
+        Animator bodyAnimator = body.gameObject.AddComponent<Animator>();
+        bodyAnimator.runtimeAnimatorController = AssetSetup.Load<RuntimeAnimatorController>(AssetSetup.AnimationsFolder + "/Carro.controller");
+
         CarSetup setup = root.AddComponent<CarSetup>();
         setup.catalog = catalog;
         setup.usePlayerChoices = isPlayer;
@@ -166,6 +170,7 @@ public static class CarPrefabBuilder
         effects.fire = fire;
         effects.sparks = sparks;
         effects.exhaustFlame = flame;
+        effects.bodyAnimator = bodyAnimator;
         effects.brakeLights = brakeAnimator;
         effects.nitroFlame = nitroAnimator;
         effects.headlights = headlights;

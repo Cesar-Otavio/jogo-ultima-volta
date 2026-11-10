@@ -24,6 +24,9 @@ public class RaceResult
     public int TotalCoins => positionCoins + pickupCoins + challengeCoins;
     public bool newRecord;
     public TrackInfo unlockedTrack;
+    // Ranking da pista depois desta corrida e a posição do tempo novo nele (0 = ficou fora).
+    public List<float> topTimes = new List<float>();
+    public int rankingPlace;
     // Um valor por desafio da pista: completo nesta corrida, completo antes ou não.
     public List<bool> completedNow = new List<bool>();
     public List<bool> completedBefore = new List<bool>();
@@ -62,7 +65,7 @@ public static class RaceRewards
         if (summary.finished)
         {
             result.positionCoins = PositionCoins(track, summary);
-            result.newRecord = UpdateRecord(save, track, summary);
+            result.newRecord = UpdateRecord(save, track, summary, result);
 
             // Terminar no pódio libera a próxima pista.
             TrackInfo next = catalog.NextTrack(track);
@@ -71,6 +74,13 @@ public static class RaceRewards
                 save.Unlock(next.id);
                 result.unlockedTrack = next;
             }
+        }
+        else
+        {
+            // Sem terminar, o ranking não muda, mas aparece na tela de resultado.
+            TrackRecord record = save.Record(track.id);
+            if (record != null && record.topTimes != null)
+                result.topTimes = new List<float>(record.topTimes);
         }
 
         save.coins += result.TotalCoins;
@@ -104,7 +114,9 @@ public static class RaceRewards
         return UnityEngine.Mathf.RoundToInt(coinsByPosition[index] * track.rewardMultiplier);
     }
 
-    static bool UpdateRecord(SaveData save, TrackInfo track, RaceSummary summary)
+    public const int RankingSize = 5;
+
+    static bool UpdateRecord(SaveData save, TrackInfo track, RaceSummary summary, RaceResult result)
     {
         TrackRecord record = save.Record(track.id);
         if (record == null)
@@ -118,6 +130,16 @@ public static class RaceRewards
             record.bestTime = summary.raceTime;
         if (record.bestPosition == 0 || summary.position < record.bestPosition)
             record.bestPosition = summary.position;
+
+        // Ranking: entra o tempo novo, ordena e fica só com os 5 melhores.
+        if (record.topTimes == null)
+            record.topTimes = new List<float>();
+        record.topTimes.Add(summary.raceTime);
+        record.topTimes.Sort();
+        if (record.topTimes.Count > RankingSize)
+            record.topTimes.RemoveRange(RankingSize, record.topTimes.Count - RankingSize);
+        result.rankingPlace = record.topTimes.IndexOf(summary.raceTime) + 1;
+        result.topTimes = new List<float>(record.topTimes);
         return newRecord;
     }
 }
